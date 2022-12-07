@@ -15,13 +15,15 @@ fi
 # Color stuff
 if type -t tput &> /dev/null 2>&1 && [[ $(tput -T$TERM colors) -ge 8 ]]; then
   NONE="\[\e[0m\]"
-  LIGHTGRAY="\[\033[38;5;245m\]"
-  DARKGRAY="\[\033[38;5;240m\]"
-  BLUE="\[\033[01;38;5;67m\]"
-  DARKPINK="\[\033[01;38;5;125m\]"
+  USER_COLOR="\[\033[01;38;5;25m\]"
+  CTRL_COLOR="\[\033[38;5;240m\]"
+  HOST_COLOR="\[\033[38;5;89m\]"
+  PATH_COLOR="\[\033[38;5;245m\]"
+  GIT_COLOR="\[\033[38;5;147m\]"
+  ARR_COLOR="\[\033[01;38;5;240m\]"
   
 # Style the prompt.
-	PS1="${DARKGRAY}${NONE}${BLUE}\u${NONE}${DARKGRAY}@${NONE}${DARKPINK}\h${NONE}${DARKGRAY}:${NONE}${LIGHTGRAY}\w\$(__git_ps1)${NONE}\n${DARKGRAY}↳${NONE} "
+	PS1="${USER_COLOR}\u${NONE}${CTRL_COLOR}@${NONE}${HOST_COLOR}\h${NONE}${CTRL_COLOR}:${NONE}${PATH_COLOR}\w${NONE}${GIT_COLOR}\$(__git_ps1)${NONE}\n${ARR_COLOR}↳${NONE} "
 
 	# Enable color support for ls and also add handy aliases.
 	if [ -x /usr/bin/dircolors ]; then
