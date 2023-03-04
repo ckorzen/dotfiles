@@ -23,9 +23,9 @@ if type -t tput &> /dev/null 2>&1 && [[ $(tput -T$TERM colors) -ge 8 ]]; then
   ARR_COLOR="\[\033[01;38;5;240m\]"
   
 # Style the prompt.
-	PS1="${USER_COLOR}\u${NONE}${CTRL_COLOR}@${NONE}${HOST_COLOR}\h${NONE}${CTRL_COLOR}:${NONE}${PATH_COLOR}\w${NONE}${GIT_COLOR}\$(__git_ps1)${NONE}\n${ARR_COLOR}↳${NONE} "
+	PS1="${USER_COLOR}\u${NONE}${CTRL_COLOR}@${NONE}${HOST_COLOR}\h${NONE}${CTRL_COLOR}:${NONE}${PATH_COLOR}\w${NONE}${GIT_COLOR}\$(__git_ps1)${NONE}\n${ARR_COLOR}•${NONE} "
 
-	# Enable color support for ls and also add handy aliases.
+	# Enable color support for ls and also add handy aliases.i
 	if [ -x /usr/bin/dircolors ]; then
 		test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 		alias ls='ls --color=auto'
